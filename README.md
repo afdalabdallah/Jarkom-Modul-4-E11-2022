@@ -21,7 +21,7 @@
 
 # Soal
 
-![soal shift 4 1](https://user-images.githubusercontent.com/103357229/203993488-15ba953e-aff2-41c0-84da-9bc42b30738d.png)
+![soal shift 4 1](https://user-images.githubusercontent.com/103357229/203995895-d9ce437d-91ad-48c3-8c6a-47ab90fbf29b.png)
 
 > Keterangan:
 
