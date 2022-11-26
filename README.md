@@ -711,6 +711,12 @@ route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.27.68.1
 
 ![image](https://user-images.githubusercontent.com/103357229/204080887-9deb78fb-9bf3-4b52-b815-cb71ec7229b7.png)
 
+# Lampiran
+
+> Berikut merupakan link yang berisi perhitungan dan hasil implementasinya:
+
+https://drive.google.com/drive/folders/1t9el5GqCpIVeznLjS8xgqW_G9lQriIUF?usp=sharing
+
 # Kendala yang dialami
 
 - Pembuatan tree untuk CIDR yang terhitung lebih susah dari pada VLSM
