@@ -40,6 +40,9 @@
 
 ## Subnetting
 
+### Pembagian Subnet Topologi
+![Untitled](https://user-images.githubusercontent.com/90848018/204092102-b4dbe396-2205-4a04-a68d-8e823b20555f.jpg)
+
 ### Penggabungan subnet
 > Penamaan subnet sama seperti VLSM
 
