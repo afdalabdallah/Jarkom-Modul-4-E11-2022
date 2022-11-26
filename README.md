@@ -79,8 +79,6 @@
 | A17 | 10.27.69.0 | 255.255.255.252 | 10.27.69.3 |
 | A18 | 10.27.84.0 | 255.255.255.252 | 10.27.84.3 |
 
-## Routing
-
 ### Konfigurasi
 
 #### ROUTER
@@ -421,6 +419,93 @@ iface eth0 inet static
 address 10.27.69.2
 netmask 255.255.255.252
 gateway 10.27.69.1
+```
+
+## Routing
+
+> Melakukan routing pada setiap router untuk menuju subnet-subnet. NB: file subnet terdapat pada folder `root` pada GNS3 project yang terlampir di github
+
+### The Resonance
+
+```
+route add -net 10.27.16.0 netmask 255.255.255.192 gw 10.27.32.2
+route add -net 10.27.8.0 netmask 255.255.255.252 gw 10.27.32.2
+route add -net 10.27.0.0 netmask 255.255.252.0 gw 10.27.32.2
+route add -net 10.27.5.0 netmask 255.255.255.252 gw 10.27.32.2
+route add -net 10.27.4.0 netmask 255.255.255.0 gw 10.27.32.2
+
+route add -net 10.27.80.0 netmask 255.255.254.0 gw 10.27.82.2
+
+route add -net 10.27.72.0 netmask 255.255.248.0 gw 10.27.88.2
+route add -net 10.27.65.0 netmask 255.255.255.252 gw 10.27.88.2
+route add -net 10.27.64.0 netmask 255.255.255.128 gw 10.27.88.2
+route add -net 10.27.64.128 netmask 255.255.255.128 gw 10.27.88.2
+
+route add -net 10.27.66.0 netmask 255.255.255.252 gw 10.27.88.2
+route add -net 10.27.70.0 netmask 255.255.254.0 gw 10.27.88.2
+route add -net 10.27.69.0 netmask 255.255.255.252 gw 10.27.88.2
+route add -net 10.27.68.0 netmask 255.255.255.0 gw 10.27.88.2
+```
+
+### The Order
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.27.32.1
+
+route add -net 10.27.0.0 netmask 255.255.252.0 gw 10.27.8.2
+route add -net 10.27.5.0 netmask 255.255.255.252 gw 10.27.8.2
+route add -net 10.27.4.0 netmask 255.255.255.0 gw 10.27.8.2
+```
+
+### The Minister
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.27.8.1
+route add -net 10.27.4.0 netmask 255.255.255.0 gw 10.27.5.2
+```
+
+### The Dauntless
+
+```
+route add 0.0.0.0 netmask 0.0.0.0 gw 10.27.5.1
+```
+
+### The Magical
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.27.82.1
+```
+
+### The Instrument
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.27.88.1
+
+route add -net 10.27.64.0 netmask 255.255.255.128 gw 10.27.65.2
+route add -net 10.27.64.128 netmask 255.255.255.128 gw 10.27.65.2
+
+route add -net 10.27.68.0 netmask 255.255.255.0 gw 10.27.66.2
+route add -net 10.27.70.0 netmask 255.255.254.0 gw 10.27.66.2
+route add -net 10.27.69.0 netmask 255.255.255.252 gw 10.27.66.2
+```
+
+### The Profound
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.27.65.1
+```
+
+### The FireFist
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.27.66.1
+route add -net 10.27.69.0 netmask 255.255.255.252 gw 10.27.68.3
+```
+
+### The Queen
+
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.27.68.1
 ```
 
 ## Testing 
