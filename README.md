@@ -34,7 +34,8 @@
 
 ### Pembagian IP
 
-![E11_Praktikum Modul 4-VLSM drawio](https://user-images.githubusercontent.com/90978855/204093710-344c21fa-6da6-42a9-b9bc-b6fe6c496901.png)
+![E11_Praktikum Modul 4-VLSM](https://user-images.githubusercontent.com/90978855/204093910-a5d75d57-32df-4dfc-95da-a2e90c10fc15.jpg)
+
 
 > Dari pembagian IP tersebut bisa didapati tabel sebagai berikut:
 
