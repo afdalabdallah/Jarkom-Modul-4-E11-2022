@@ -79,6 +79,352 @@
 | A17 | 10.27.69.0 | 255.255.255.252 | 10.27.69.3 |
 | A18 | 10.27.84.0 | 255.255.255.252 | 10.27.84.3 |
 
+## Routing
+
+### Konfigurasi
+
+#### ROUTER
+
+> The Resonance
+
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet static
+address 10.27.32.1
+netmask 255.255.255.252
+
+auto eth2
+iface eth2 inet static
+address 10.27.88.1
+netmask 255.255.255.252
+
+auto eth3
+iface eth3 inet static
+address 10.27.82.1
+netmask 255.255.255.252
+
+auto eth4
+iface eth4 inet static
+address 10.27.84.1
+netmask 255.255.255.252
+```
+
+> The Order
+
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.27.32.2
+netmask 255.255.255.252
+gateway 10.27.32.1
+
+auto eth1
+iface eth1 inet static
+address 10.27.16.1
+netmask 255.255.255.192
+
+auto eth2
+iface eth2 inet static
+address 10.27.8.1
+netmask 255.255.255.252
+```
+
+> The Minister
+
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.27.8.2
+netmask 255.255.255.252
+gateway 10.27.8.1
+
+auto eth1
+iface eth1 inet static
+address 10.27.0.1
+netmask 255.255.252.0
+
+auto eth2
+iface eth2 inet static
+address 10.27.5.1
+netmask 255.255.255.252
+```
+
+> The Dauntless
+
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.27.5.2
+netmask 255.255.255.252
+gateway 10.27.5.1
+
+auto eth1
+iface eth1 inet static
+address 10.27.4.1
+netmask 255.255.255.0
+```
+
+> The Magical
+
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.27.82.2
+netmask 255.255.255.252
+gateway 10.27.130.1
+
+auto eth1
+iface eth1 inet static
+address 10.27.80.1
+netmask 255.255.254.0
+```
+
+> The Instrument
+
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.27.88.2
+netmask 255.255.255.252
+gateway 10.27.88.1
+
+auto eth1
+iface eth1 inet static
+address 10.27.72.1
+netmask 255.255.255.128
+
+auto eth2
+iface eth2 inet static
+address 10.27.66.1
+netmask 255.255.255.252
+
+auto eth3
+iface eth3 inet static
+address 10.27.65.1
+netmask 255.255.255.252
+```
+
+> The Profound
+
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.27.64.129
+netmask 255.255.255.128
+
+auto eth1
+iface eth1 inet static
+address 10.27.64.1
+netmask 255.255.255.128
+
+auto eth2
+iface eth2 inet static
+address 10.27.65.2
+netmask 255.255.255.252
+gateway 10.27.65.1
+```
+
+> Teh FireFist
+
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.27.66.2
+netmask 255.255.255.252
+gateway 10.27.66.1
+
+auto eth1
+iface eth1 inet static
+address 10.27.68.1
+netmask 255.255.255.0
+
+auto eth2
+iface eth2 inet static
+address 10.27.70.1
+netmask 255.255.254.0
+```
+
+> The Queen
+
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 10.27.68.3
+netmask 255.255.255.0
+gateway 10.27.68.1
+
+auto eth1
+iface eth1 inet static
+address 10.27.69.1
+netmask 255.255.255.252
+```
+
+#### PC
+
+> Ashaf
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.16.2
+netmask 255.255.255.192
+gateway 10.27.16.1
+```
+
+> Guidae
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.0.2
+netmask 255.255.252.0
+gateway 10.27.0.1
+```
+
+> Phanora
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.4.2
+netmask 255.255.255.0
+gateway 10.27.4.1
+```
+
+> Johan
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.4.3
+netmask 255.255.255.0
+gateway 10.27.4.1
+```
+
+> Corvekt
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.80.2
+netmask 255.255.254.0
+gateway 10.27.80.1
+```
+
+> Haines
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.80.3
+netmask 255.255.254.0
+gateway 10.27.80.1
+```
+
+> MattCugat
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.72.2
+netmask 255.255.255.128
+gateway 10.27.72.1
+```
+
+> Spendrow
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.64.130
+netmask 255.255.255.128
+gateway 10.27.64.129
+```
+
+> Helga
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.64.2
+netmask 255.255.255.128
+gateway 10.27.64.1
+```
+
+> Oakleave
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.70.2
+netmask 255.255.254.0
+gateway 10.27.70.1
+```
+
+> Keith
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.68.2
+netmask 255.255.255.0
+gateway 10.27.68.1
+```
+
+#### SERVER
+
+> The Beast
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.84.2
+netmask 255.255.255.252
+gateway 10.27.84.1
+```
+
+> The Witch
+
+```
+auto eth0
+iface eth0 inet static
+address 10.27.69.2
+netmask 255.255.255.252
+gateway 10.27.69.1
+```
+
+## Testing 
+
 # Kendala yang dialami
 
 - Pembuatan tree untuk CIDR yang terhitung lebih susah dari pada VLSM
