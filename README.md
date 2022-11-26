@@ -32,6 +32,18 @@
 # VLSM dengan Cisco
 
 
+## Pembuatan Topologi 
+
+> Pembuatan topologi dibuat sesuai dengan arahan modul, perbedaan hanya ada pada port tambahan pada beberapa router. sebagai contoh, router `the Resonance` memerlukan 3 port tambahan. Hanya ada pilihan 1, 2, 4, dst port, maka kita tambahkan 4 port dengan `NM-4E`. Sesuai dengan gambar berikut:
+
+![image](https://user-images.githubusercontent.com/103357229/204108443-c68ad654-e614-4439-814a-136ecbe03c24.png)
+
+> Hasil topologi sebagai berikut:
+
+<img width="571" alt="image" src="https://user-images.githubusercontent.com/103357229/204108374-890ad649-d51d-4911-a8ea-fc4c5570dd3e.png">
+
+## Subnetting
+
 ### Pembagian IP
 
 ![E11_Praktikum Modul 4-VLSM](https://user-images.githubusercontent.com/90978855/204093910-a5d75d57-32df-4dfc-95da-a2e90c10fc15.jpg)
@@ -60,6 +72,131 @@
 | A17 | 10.27.0.28 | 255.255.255.252 | 10.27.0.31 |
 | A18 | 10.27.0.32 | 255.255.255.252 | 10.27.0.35 |
 
+### Konfigurasi
+
+> dari tabel di atas, maka bisa kita implementasikan pada router, PC, dan server yang ada. Sebagai contoh berikut:
+
+#### Konfigurasi untuk A6 pada router
+
+> Pada eth1/0 The Refonance mengarah pada subnet A6 yang memiliki NID `10.27.0.8`. Sehingga IP untuk the Refonance menuju A6 berisi `10.27.0.9`. Pada FastEth0/0 the Order mengarah menuju A6, yakni `10.27.0.8`, sedangkan `10.27.0.9` telah digunakan oleh the Refonance, sehingga kita pada the Order kiat dapat menggunakan `10.27.0.10`
+
+![image](https://user-images.githubusercontent.com/103357229/204108565-ff306bf6-3d9d-45c4-b4d3-07fc9303b8d5.png)
+
+![image](https://user-images.githubusercontent.com/103357229/204108748-484ab8a0-6a28-42b0-811f-f73bb8ff7729.png)
+
+> Pada PC dan Server dilakukan konfigurasi dengan cara yang sama, sebagai contoh pada server `the Beast` dan PC `Phanora` dan `Johan`
+
+#### server `the Beast`
+
+> the Beast terletak pada subnet A18, dimana NID nya adalah `10.27.0.32`, kita akan menggunakan address `10.27.0.34` untuk the beast. Sedangkan, pada router the Refonance kita gunakan address `10.27.0.33` (untuk FA0/1). Sehingga, gateway pada the Beast  menjadi `10.27.0.33` juga.
+
+![image](https://user-images.githubusercontent.com/103357229/204108906-03c4f48b-0aee-427b-8ed0-39b018e076fd.png)
+
+#### PC `Phanora` dan `Johan`
+
+> Pada subnet A1, terdapat 2 PC sekaligus, yakni Phanora dan Johan. Kita dapat melakukan konfigurasi dengan membedakan IP address untuk masing-masing PC, tetapi dengan gateway yang sama, yakni FA0/1 dari The Dauntless. NID untuk A1 adalah 10.27.2.0, sehingga pada FA0/1 the Dauntless diisi `10.27.2.1` dan pada Phanora diisi `10.27.2.2` dan pada PC Johan kita isi `10.27.2.3`. Sesuai dengan hasil screenshot berikut:
+
+![image](https://user-images.githubusercontent.com/103357229/204109057-563b70ab-676d-41c0-bab8-d4752d00ac92.png)
+
+![image](https://user-images.githubusercontent.com/103357229/204109060-412c9a3f-800b-470c-9ec9-30cee564c47f.png)
+
+![image](https://user-images.githubusercontent.com/103357229/204109064-39e03d65-f00c-4c6d-a1bd-bca336cf6777.png)
+
+> Lakukan konfigurasi pada node-node lainnya sesuai dengan tabel pembagian IP yang sudah dibuat
+
+## Routing
+
+> Routing dilakukan dengan menambahkan static routing pada setiap router yang ada
+
+### the Refonance
+
+```
+10.27.0.64/26 via 10.27.0.10
+10.27.0.0/30 via 10.27.0.10
+10.27.8.0/24 via 10.27.0.10
+10.27.2.0/24 via 10.27.0.10
+10.27.0.4/30 via 10.27.0.10
+10.27.0.24/30 via 10.27.0.26
+10.27.6.0/23 via 10.27.0.26
+10.27.0.128/25 via 10.27.0.18
+10.27.0.20/30 via 10.27.0.18
+10.27.1.128/25 via 10.27.0.18
+10.27.1.0/25 via 10.27.0.18
+10.27.0.12/30 via 10.27.0.18
+10.27.4.0/23 via 10.27.0.18
+10.27.3.0/24 via 10.27.0.18
+10.27.0.28/30 via 10.27.0.18
+```
+
+### the Magical
+
+```
+0.0.0.0/0 via 10.27.0.25
+```
+
+### the Order
+
+```
+0.0.0.0/0 via 10.27.0.9
+10.27.8.0/22 via 10.27.0.6
+10.27.0.0/30 via 10.27.0.6
+10.27.2.0/24 via 10.27.0.6
+```
+
+### the Minister
+
+```
+0.0.0.0/0 via 10.27.0.5
+10.27.2.0/24 via 10.27.0.2
+```
+
+### the Dauntless
+
+```
+0.0.0.0/0 via 10.27.0.1
+```
+
+### the Instrument
+
+```
+0.0.0.0/0 via 10.27.0.17
+10.27.1.128/25 via 10.27.0.22
+10.27.1.0/25 via 10.27.0.22
+10.27.4.0/23 via 10.27.0.14
+10.27.3.0/24 via 10.27.0.14
+10.27.0.28/30 via 10.27.0.14
+```
+
+### the Profound
+
+```
+0.0.0.0/0 via 10.27.0.21
+```
+
+### the FireFist
+
+```
+0.0.0.0/0 via 10.27.0.13
+10.27.0.28/30 via 10.27.3.3
+```
+
+### the Queen
+
+```
+0.0.0.0/0 via 10.27.3.1
+```
+
+## Testing
+
+> Testing dapat dilakukan dengan melakukan message dari node satu ke node lainnya. Berikut hasil tangkap dari beberapa percobaan yang dilakukan. (Apabila pada file PKT yang tertaut masih menghasilkan failed, maka harap tunggu dan bisa dicoba lagi)
+
+![image](https://user-images.githubusercontent.com/103357229/204109437-d9b00a32-c1de-4b71-a138-4509df3a1050.png)
+
+![image](https://user-images.githubusercontent.com/103357229/204109476-ee188f07-d83d-477a-ba99-95e9b1968f7b.png)
+
+![image](https://user-images.githubusercontent.com/103357229/204109502-58d2814f-820e-4b1c-87b4-30adea6b1829.png)
+
+
 # CIDR dengan GNS3
 
 ## Topologi pada GNS3
@@ -84,6 +221,7 @@
 ![Praktikum Modul 4](https://user-images.githubusercontent.com/103357229/204079036-d70a5160-4b5b-4956-86c4-5f71318b0d8e.jpg)
 
 ### Pembagian IP
+
 > Berdasar penggabungan subnet di atas, maka bisa didapatkan pohon CIDR sebagai berikut:
 
 ![E11_Praktikum Modul 4-CIDR](https://user-images.githubusercontent.com/103357229/204079200-57bb1c66-433d-473d-b9e0-6cb73fb7ef30.jpg)
