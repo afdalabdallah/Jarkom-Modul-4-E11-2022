@@ -40,9 +40,7 @@
 
 ## Subnetting
 
-### Subnetting
-
-#### Penggabungan subnet
+### Penggabungan subnet
 > Penamaan subnet sama seperti VLSM
 
 ![Praktikum Modul 4 (6)](https://user-images.githubusercontent.com/103357229/204079015-d0a2faf2-d4a2-4f3d-b7a2-4791ba5b8a99.jpg)
@@ -53,10 +51,35 @@
 ![Praktikum Modul 4 (1)](https://user-images.githubusercontent.com/103357229/204079033-48c7b0b0-ff72-4a90-915d-44895ec1ccf4.jpg)
 ![Praktikum Modul 4](https://user-images.githubusercontent.com/103357229/204079036-d70a5160-4b5b-4956-86c4-5f71318b0d8e.jpg)
 
-#### Pembagian IP
+### Pembagian IP
 > Berdasar penggabungan subnet di atas, maka bisa didapatkan pohon CIDR sebagai berikut:
 
 ![E11_Praktikum Modul 4-CIDR](https://user-images.githubusercontent.com/103357229/204079200-57bb1c66-433d-473d-b9e0-6cb73fb7ef30.jpg)
+
+> Daru pembagian IP tersebut bisa didapati tabel sebagai berikut:
+
+| SUBNET | NID    | NETMASK | Broadcast Address |
+| :---:   | :---: | :---: | :---: |
+| A1 |  10.27.4.0  |  255.255.255.0  | 10.27.4.255 |
+| A2 | 10.27.5.0 | 255.255.255.252 | 10.27.5.3 |
+| A3 | 10.27.0.0 | 255.255.252.0 | 10.27.3.255 |
+| A4 | 10.27.8.0 | 255.255.255.252 | 10.27.8.3 |
+| A5 | 10.27.16.0 | 255.255.255.192 | 10.27.16.63 |
+| A6 | 10.27.32.0 | 255.255.255.252 | 10.27.32.3 |
+
+| A7 | 10.27.68.0 | 255.255.255.0 | 10.27.68.255 |
+| A8 | 10.27.70.0 | 255.255.254.0 | 10.27.71.255 |
+| A9 | 10.27.66.0 | 255.255.255.252 | 10.27.66.3 |
+| A10 | 10.27.88.0 | 255.255.248.0 | 10.27.95.255 |
+| A11 | 10.27.72.0 | 255.255.248.0 | 10.27.79.255 |
+| A12 | 10.27.64.0 | 255.255.255.128 | 10.27.64.127 |
+
+| A13 | 10.27.64.128 | 255.255.255.128 | 10.27.64.255 |
+| A14 | 10.27.65.0 | 255.255.255.252 | 10.27.65.3 |
+| A15 | 10.27.80.0 | 255.255.254.0 | 10.27.81.255 |
+| A16 | 10.27.82.0 | 255.255.255.252 | 10.27.82.3 |
+| A17 | 10.27.69.0 | 255.255.255.252 | 10.27.69.3 |
+| A18 | 10.27.84.0 | 255.255.255.252 | 10.27.84.3 |
 
 # Kendala yang dialami
 
