@@ -510,6 +510,37 @@ route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.27.68.1
 
 ## Testing 
 
+> Testing dapat dilakukan dengan melakukan ping terhadap IP address subnet / node lain
+
+### The Witch ke Phanora
+
+![image](https://user-images.githubusercontent.com/103357229/204080684-27f14aa5-3b24-4f8f-b305-b3b762506a92.png)
+
+### The Witch ke The Beast
+
+![image](https://user-images.githubusercontent.com/103357229/204080716-07139e84-9d21-4d04-bae8-0e0dc7a3d21e.png)
+
+### Guidae ke Helga
+
+![image](https://user-images.githubusercontent.com/103357229/204080745-09da2ad1-4c25-4170-abb4-3191c011fa22.png)
+
+### Phanora ke Spendrow
+
+![image](https://user-images.githubusercontent.com/103357229/204080778-79045845-8cb4-4869-a23e-33fb9a24b81d.png)
+
+
+### The Queen ke the Dauntless
+
+![image](https://user-images.githubusercontent.com/103357229/204080819-a72eeb01-cbe1-49d3-92bf-17945c46492c.png)
+
+### The Minister ke The Magical
+
+![image](https://user-images.githubusercontent.com/103357229/204080851-901e61ee-64c9-4adc-880e-46ab5f824a79.png)
+
+### The Resonance ke The Witch
+
+![image](https://user-images.githubusercontent.com/103357229/204080887-9deb78fb-9bf3-4b52-b815-cb71ec7229b7.png)
+
 # Kendala yang dialami
 
 - Pembuatan tree untuk CIDR yang terhitung lebih susah dari pada VLSM
